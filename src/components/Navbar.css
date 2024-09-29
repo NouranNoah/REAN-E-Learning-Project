@@ -1,0 +1,117 @@
+:root {
+    --main-color: #3e2723;
+    --main-padding: 80px;
+    --main-border-radius:20px;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+   
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+.cont {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .cont {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cont {
+        width: 950px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cont {
+        width: 1170px;
+    }
+}
+nav{
+    padding: 20px 0;
+    background-color: rgba(73, 187, 189, 1);
+}
+nav .cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .cont .all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+nav .cont .logo{
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffff;
+}
+nav .cont .links ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    gap: 30px;
+    color: #ffff;
+    font-size: 22px;
+    cursor: pointer;
+}
+nav .cont .links li{
+    transition: 0.3s;
+}
+nav .cont .links li:hover{
+    transform: scale(1.1);
+}
+nav .cont .buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+button {
+
+    background-color:rgba(126, 204, 205, 1) ;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 20px;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 22px;
+}
+
+ button:hover .link{
+    color: rgba(91, 91, 91, 1);
+    background-color: #ffff;  
+ 
+}
+
+.link{
+    transition: 0.3s;
+    text-decoration: none;
+    color: #ffff;
+}
