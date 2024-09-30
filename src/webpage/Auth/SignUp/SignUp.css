@@ -1,0 +1,146 @@
+.signup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4% 10%;
+    padding-bottom: 0;
+}
+
+.boxImg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    border-radius: 15px;
+    padding: 0 5%;
+    color: white;
+}
+.boxImg h3{
+    margin-top: 85%;
+}
+
+.boxImg p{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.719);
+    padding: 10px 0;
+}
+
+.boxForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20%;
+}
+.boxForm h5{
+    color: rgba(0, 0, 0, 0.842);
+    padding: 3%;
+    padding-top: 0%;
+    text-align: center;
+}
+
+.boxForm .turnButton{
+    background-color: rgba(73, 187, 189, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 35px;
+    padding: 5px;
+    margin: 0 10%;
+}
+.turnButton .active{
+    background-color: rgb(129, 228, 230);
+}
+.turnButton button{
+    color: rgba(255, 255, 255, 0.89);
+    background-color: transparent;
+    font-size: 18px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+
+.boxForm p{
+    color: rgba(0, 0, 0, 0.63);
+    font-size: 17px;
+    padding: 3%;
+    margin-top: 5%;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    color: rgba(0, 0, 0, 0.842);
+    padding: 1% 0;
+}
+form input{
+    border-radius: 35px;
+    margin-bottom: 3%;
+    padding: 3%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+}
+form input:focus{
+    border:2px solid rgba(73, 187, 189, 1);
+}
+form button{
+    margin: 15%;
+    margin-top: 5%;
+    margin-bottom: 0;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(73, 187, 189, 1);
+    transition: background-color 0.3s ease;
+}
+form button:hover{
+    background-color: rgb(58, 151, 153);
+    color: white;
+}
+
+
+
+
+
+
+
+@media (max-width: 1220px) {
+    .boxForm .turnButton {
+        margin: 0 ;
+    }
+    
+}
+
+
+@media (max-width: 930px) {
+    .turnButton button{
+        padding: 5px 15px;
+    }
+    .boxForm{
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .boxImg{
+        display: none;
+    }
+    .signup {
+        grid-template-columns: 1fr;
+    }
+    .boxForm h5 {
+        padding: 10% 0;
+    }
+    .boxForm p {
+        padding: 10px 0;
+    }
+    form input{
+        margin-bottom: 10%;
+        padding: 5%;
+    }
+    .boxForm{
+        padding: 40px 0%;
+    }
+    .boxForm .turnButton {
+        margin: 0 15%;
+        padding: 2%;
+    }
+}

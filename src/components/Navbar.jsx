@@ -6,7 +6,7 @@ export  default function Navbar(){
         <nav>
             <div className="cont">
                 <div className="logo">
-                        Earn
+                        REAN
                 </div>
                 <div className="all">
                 <div className="links">

@@ -8,22 +8,25 @@ import Careers from './webpage/website/Careers';
 
 import { Route,Routes } from 'react-router-dom';
 import Log from './webpage/Auth/Log';
-import Signup from './webpage/Auth/Signup';
+import Signup from './webpage/Auth/SignUp/Signup';
+import { AuthProvider } from './webpage/Context/Usercontext';
 
 export default function App(){
    return(
     <>
 
-    <Routes>
+            <AuthProvider>
+            <Routes>
  
-               <Route path="/" element={<Home />} />
-               <Route path="/courses" element={<Courses />} />
-                <Route path="/careers" element={<Careers />} />
-                <Route path="/blogs" element={<Blogs />} />
-                <Route path="/about" element={<About />} />
-                <Route path='/log' element={<Log/>}></Route>
-                <Route path='signup' element={<Signup/> }></Route>
-          </Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/courses" element={<Courses />} />
+                  <Route path="/careers" element={<Careers />} />
+                  <Route path="/blogs" element={<Blogs />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path='/log' element={<Log/>}></Route>
+                  <Route path='signup' element={<Signup/> }></Route>
+            </Routes>
+            </AuthProvider>
      
 
     </>

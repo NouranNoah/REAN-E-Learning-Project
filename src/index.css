@@ -1,14 +1,14 @@
 header button{
   color: #ffff;
   background-color:rgba(126, 204, 205, 1) ;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   box-shadow: none;
   border-radius: 20px;
   text-transform: capitalize;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
 }
 button:hover{
   background-color: #ffff;
