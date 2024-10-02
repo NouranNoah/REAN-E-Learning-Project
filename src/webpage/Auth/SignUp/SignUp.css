@@ -57,7 +57,7 @@
 }
 
 
-.boxForm p{
+.boxForm .title-boxForm{
     color: rgba(0, 0, 0, 0.63);
     font-size: 17px;
     padding: 3%;
@@ -98,7 +98,11 @@ form button:hover{
 
 
 
-
+.error{
+    color:#e45959;
+    padding: 2%;
+    text-align: center;
+}
 
 
 
