@@ -35,6 +35,7 @@ ul {
 
 @media (min-width: 768px) {
     .cont {
+      
         width: 750px;
     }
 }
@@ -51,7 +52,7 @@ ul {
     }
 }
 nav{
-    padding: 20px 0;
+    padding: 13px 0;
     background-color: rgba(73, 187, 189, 1);
 }
 nav .cont {
@@ -59,14 +60,19 @@ nav .cont {
     justify-content: space-between;
     align-items: center;
 }
+@media(max-width:767px){
+    nav .cont {
+        padding:  0 20px;
+    }
+}
 nav .cont .all{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 nav .cont .logo{
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     color: #ffff;
 }

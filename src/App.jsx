@@ -1,6 +1,6 @@
 
 import './index.css';
-import Home from './webpage/website/Home';
+import Home from './webpage/website/Home/Home';
 import Courses from './webpage/website/Courses';
 import Blogs from './webpage/website/Blogs';
 import About from './webpage/website/About';
