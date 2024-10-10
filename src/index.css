@@ -1,17 +1,17 @@
  body {
-  background-color: rgb(241, 240, 240)
+ background-color:  rgb(243 242 242 / 40%);
  }
  button{
   color: #ffff;
   background-color:rgba(126, 204, 205, 1) ;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   box-shadow: none;
   border-radius: 20px;
   text-transform: capitalize;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
 }
 button:hover{
   background-color: #ffff;
@@ -231,15 +231,15 @@ width: 350;
 .cloud .cards .cont .box .text p.th{
   padding-top: 10px;
 }
-.What .cards {
-  padding: 40px;
+.What  .cont .cards {
+  padding: 40px 0 80px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
   gap: 80px;
   align-items: center;
 }
 @media(max-width:1199px){
-  .What .cards{
+  .What .cont .cards{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -398,46 +398,4 @@ height: 404px;
 }
 .thingstodo .img img{
   max-width: 100%;
-}
-footer{
-  background-color: rgba(37, 38, 65, 1);
-  color: white;
-  padding: 80px 0;
-  text-align: center;
-}
-footer .header{
-  font-size: 26px;
-  color: rgba(178, 179, 207, 1)
-}
-
-footer form{
-  padding: 20px;
-  display: flex;
-gap: 20px;
-align-items: center;
-justify-content: center;
-}
-footer input{
-  padding: 10px 20px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  background-color: transparent;
-  border:none;
-  outline: none;
-  box-shadow: none;
-  border: 1px solid #777;
-}
-@media(max-width:767px){
-  footer input{
-    padding: 7px 10px;
-  }
-  footer button{
-    padding: 7px 10px;
-  }
-  footer .header{
-    font-size: 23px;
-  }
 }

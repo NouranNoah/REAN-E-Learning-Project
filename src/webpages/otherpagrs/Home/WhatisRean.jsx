@@ -1,4 +1,5 @@
- import confident from "../../../assets/confident-teacher-explaining-lesson-pupils 1.png"
+ import { Link } from "react-router-dom"
+import confident from "../../../assets/confident-teacher-explaining-lesson-pupils 1.png"
 export default function WhatisRean() {
     return (
         <div className=" What">
@@ -22,7 +23,10 @@ export default function WhatisRean() {
                         <div className="text">
                         <h2>FOR INSTRUCTORS</h2>
                             <button>
+                                <Link to="/login" className="link" >
                                 start free
+                                </Link>
+                               
                             </button>
                         </div>
                         
@@ -32,7 +36,10 @@ export default function WhatisRean() {
                         <div className="text">
                         <h2>FOR STUDENTS</h2>
                             <button>
-                               join now
+                                <Link className="link" to="/signup"  >
+                                join now
+                                </Link>
+                         
                             </button>
                         </div>
                     

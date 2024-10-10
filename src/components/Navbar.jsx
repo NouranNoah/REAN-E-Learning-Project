@@ -2,6 +2,7 @@
 import "./Navbar.css";
 import logo from "../assets/rean-high-resolution-logo-white-transparent.png"
 import { Link } from "react-router-dom";
+
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
@@ -78,10 +79,15 @@ export default function Navbar() {
           <img style={{maxWidth:"35px"}} src={logo} alt="img" />
         </div>
         {isTablet && (
-          <FaBars
-            onClick={toggleMenu}
-            style={{ fontSize: "30px", color: "white", cursor: "pointer" }}
-          />
+      <FaBars
+      onClick={toggleMenu}
+      style={{ 
+        fontSize: "30px",  
+        cursor: "pointer",
+        color: window.location.href === 'http://localhost:5173/' ? "white" : "black" 
+      }}
+    />
+    
         )}
         { isvisable && (
           <div className="all"  style={isvisable && isTablet ? allstyle : allstylere}  >
