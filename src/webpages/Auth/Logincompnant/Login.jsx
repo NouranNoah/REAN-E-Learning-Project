@@ -1,54 +1,61 @@
-import  { useState } from "react";
+import React, { useState } from "react";
 import loginImg from "../../../assets/loginphoto2.jpg"; 
 import './Login.css';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useAuth } from '../../Context/Usercontext'; 
 
 export default function Login() {
     const navigate = useNavigate();
+    const { loginToApi, errorMessages } = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [localError, setLocalError] = useState("");
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-        if (error) {
-            setError("");
+        if (localError) {
+            setLocalError("");
         }
     };
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
-        if (error) {
-            setError("");
+        if (localError) {
+            setLocalError("");
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!email || !password) {
-            setError("You should enter both email and password.");
+            setLocalError("You should enter both email and password.");
             return;
         }
-
-        setError(""); 
-        await submitLoginToAPI();
-    };
-
-    const submitLoginToAPI = async () => {
+    
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-            const { token, user } = res.data; 
-            localStorage.setItem('token', token);
-            localStorage.setItem('user', JSON.stringify(user));
-            navigate('/'); // Navigate to home after successful login
+            const { user } = await loginToApi(email, password);
+            // switch (user.role) {
+            //     case 'Instructor':
+            //         navigate('/instructor');
+            //         break;
+            //     case 'Admin':
+            //         navigate('/admin');
+            //         break;
+            //     case 'Client':
+            //         navigate('/client');
+            //         break;
+            //     default:
+            //         setLocalError("Role not recognized.");
+            // }
+            navigate('/instructor')
         } catch (error) {
-            setError(error.response?.data?.message || "Login failed. Please try again.");
+            setLocalError("Login failed. Please check your credentials.");
         }
     };
+    
 
-    const turnRegister = () => {
-        navigate('/signup'); 
+    const turnLogin = () => {
+        navigate('/Signup');
     };
 
     return (
@@ -58,14 +65,19 @@ export default function Login() {
                 <p>Login to Continue</p>
             </div>
             <div className="boxForm">
-                <h5>Login to REAN</h5>
                 <div className="turnButton">
-                    <button onClick={() => navigate('/login')}>Login</button>
-                    <button onClick={turnRegister}>Register</button>
+                    <button className="active">Login</button>
+                    <button onClick={turnLogin}>Register</button>
                 </div>
-                {error && (
+                <h5>Login to REAN</h5>
+                {localError && (
                     <div className="error-messages" aria-live="assertive">
-                        <p>{error}</p>
+                        <p>{localError}</p>
+                    </div>
+                )}
+                {errorMessages && (
+                    <div className="error-messages" aria-live="assertive">
+                        <p>{errorMessages}</p>
                     </div>
                 )}
                 <form onSubmit={handleSubmit}>
