@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { useAuth } from "../webpages/Context/Usercontext";
+
 
 export default function Navbar() {
   const [isTablet, setIsTablet] = useState(false);
   const [isvisable, setIsvisble] = useState(true);
+  const { userName } = useAuth(); 
+  console.log(userName);
 
+  
   const handleResize = () => {
     const tablet = window.innerWidth <= 1190;
       setIsTablet(tablet); // true tablet
@@ -100,6 +106,7 @@ export default function Navbar() {
                 <li><Link to="/about" className="link">about us</Link></li>
               </ul>
             </div>
+            
             <div className="buttons" >
               <button>
                 <Link to="/login" className="link">login</Link>

@@ -20,14 +20,14 @@ export default function App() {
                     <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 
-                <Route element={<RequierAuth/>}>
+                
                 <Route path="/courses" element={<Courses />} />
                     <Route path="/careers" element={<Careers />} />
                     <Route path="/details/:id" element={<CourseDetalis />} /> 
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path="/about" element={<About />} />
 
-                </Route>
+         
                  
                 </Routes>
             
