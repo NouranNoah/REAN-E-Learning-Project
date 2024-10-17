@@ -1,0 +1,96 @@
+.myprofile{
+    width: 100%;
+    padding:  0 50px 80px 50px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    
+   
+    
+}
+.all{
+    width: 100%;
+ display: grid;
+ justify-content: center;
+}
+.myaccount .email,
+.myaccount .username,
+.myaccount .password{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
+.myaccount label{
+  
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    color: rgb(85, 145, 147);
+}
+.myaccount input{
+
+ width: 500px;
+ border-radius: 5px;
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ -ms-border-radius: 5px;
+ -o-border-radius: 5px;
+}
+.action{
+    cursor: pointer;
+    width: 40%;
+    padding-top: 40px;
+    text-transform: capitalize;
+    color: rgb(85, 145, 147)
+} 
+button:disabled {
+    background-color: #ccc; /* لون خلفية رمادي */
+    color: #666; /* لون نص رمادي */
+    cursor: not-allowed; /* تغيير شكل المؤشر */
+}
+.usercircle .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: white;
+    position: relative;
+}
+.usercircle{
+    padding:  80px 60px 0 60px;
+    display: flex;
+    align-items: center;
+    
+    gap: 20px;
+    margin-left: 0;
+
+}
+.usercircle .circle h3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    text-transform: capitalize;
+    font-size: 27px;
+    color: rgb(85, 145, 147)
+
+}
+.usercircle .username p{
+    font-weight: bold;
+    text-transform: capitalize;
+
+} 
+
+.usercircle .username span{
+    display: inline-block;
+    padding-top: 5px;
+    color: #777;
+    font-size: 14px;
+}

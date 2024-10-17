@@ -1,12 +1,36 @@
 import  { createContext, useState, useContext } from 'react';
 import axios from 'axios';
+import Cookies from "universal-cookie";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-    const [token, setToken] = useState(null);
-    const [user, setUser] = useState(null);
+    // const [token, setToken] = useState(null);
+    const cookie = new Cookies();
     const [errorMessages, setErrorMessages] = useState('');
+
+    const sendSignToApi = async (userData) => {
+        try {
+            const res = await axios.post('http://localhost:5000/api/auth/signup', userData);
+            return res.data;
+        } catch (error) {
+            handleError(error);
+            throw error;
+        }
+    };
+
+    const loginToApi = async (email, password) => {
+        try {
+            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const token = res.data.token;
+            
+            cookie.set("Bearer",token)
+            return res.data;
+        } catch (error) {
+            handleError(error);
+            throw error;
+        }
+    };
 
     const handleError = (error) => {
         if (error.response) {
@@ -16,22 +40,8 @@ export const UserProvider = ({ children }) => {
         }
     };
 
-    const loginToApi = async (email, password) => {
-        try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-            setToken(res.data.token);
-            setUser(res.data.user);
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
-            return res.data;
-        } catch (error) {
-            handleError(error);
-            throw error;
-        }
-    };
-
     return (
-        <UserContext.Provider value={{ token, user, loginToApi, errorMessages }}>
+        <UserContext.Provider value={{  sendSignToApi, loginToApi, errorMessages }}>
             {children}
         </UserContext.Provider>
     );

@@ -1,0 +1,31 @@
+.home-landing{
+    margin-top: 50px;
+    margin-right: 20px;
+    height: 350px;
+    background-image: url("../assets//searchheader.png");
+    background-size: cover;
+    width: 100%;
+    border-radius:20px ;
+    -webkit-border-radius:20px ;
+    -moz-border-radius:20px ;
+    -ms-border-radius:20px ;
+    -o-border-radius:20px ;
+    position: relative;
+}
+.home-landing .text{
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.home-landing .text h3{
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+}

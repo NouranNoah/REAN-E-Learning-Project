@@ -1,5 +1,4 @@
-
-import  { useState } from "react";
+import { useState } from 'react';
 import signupImg from './signupImg.jpeg';
 import './SignUp.css';
 import { useNavigate } from "react-router-dom";
@@ -16,8 +15,9 @@ export default function Signup() {
         password: '',
         role: ''
     });
+    const [loading, setLoading] = useState(false);
 
-    function validateRegisterForm() {
+    const validateRegisterForm = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let scheme = Joi.object({
             username: Joi.string().min(3).max(10).required(),
@@ -28,43 +28,41 @@ export default function Signup() {
                 return value;
             }),
             password: Joi.string().min(6).required(),
-            role: Joi.string().valid('admin', 'client').required().messages({
-                'any.required': 'Role is required.',
-                'any.only': 'Role must be either "admin" or "client".'
-            })
+            role: Joi.string().required('Role is required.')
         });
         return scheme.validate(user, { abortEarly: false });
-    }
+    };
 
-    function turnLogin() {
-        navigate('/log');
-    }
+    const turnLogin = () => {
+        navigate('/login');
+    };
 
-    async function handleSubmit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let validation = validateRegisterForm();
         if (validation.error) {
             setErrorList(validation.error.details);
         } else {
+            setLoading(true);
             try {
                 await sendSignToApi(user);
-                navigate('/');
+                navigate('/login');
             } catch (error) {
-                console.log(error)
-    
+                console.log(error);
+            } finally {
+                setLoading(false);
             }
         }
-    }
+    };
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        const newValue = id === 'role' ? value.toLowerCase() : value;
-        setUser(prev => ({ ...prev, [id]: newValue }));
-    }
+        setUser(prev => ({ ...prev, [id]: value }));
+    };
 
     return (
         <div className="signup">
-            <div className="boxImg" style={{ backgroundImage:`url(${signupImg})` }}>
+            <div className="boxImg" style={{ backgroundImage: `url(${signupImg})` }}>
                 <h3>Learning With Us Is Simpler ;</h3>
                 <p>Come Join Us</p>
             </div>
@@ -76,7 +74,7 @@ export default function Signup() {
                 </div>
                 <p className="title-boxForm">Create a new account to enjoy all our features!</p>
 
-                {errorMessages && (
+                {errorMessages && errorMessages.general && (
                     <div className="error-messages">
                         <p>{errorMessages.general}</p>
                     </div>
@@ -91,9 +89,9 @@ export default function Signup() {
                         value={user.username}
                         onChange={handleChange}
                     />
-                    {errorList.find(err => err.context.label === 'username') &&
+                    {errorList.find(err => err.context.label === 'username')?.message && (
                         <p className="error">{errorList.find(err => err.context.label === 'username').message}</p>
-                    }
+                    )}
 
                     <label htmlFor="email">Email Address</label>
                     <input
@@ -103,9 +101,9 @@ export default function Signup() {
                         value={user.email}
                         onChange={handleChange}
                     />
-                    {errorList.find(err => err.context.label === 'email') &&
+                    {errorList.find(err => err.context.label === 'email')?.message && (
                         <p className="error">{errorList.find(err => err.context.label === 'email').message}</p>
-                    }
+                    )}
 
                     <label htmlFor="password">Password</label>
                     <input
@@ -115,25 +113,30 @@ export default function Signup() {
                         value={user.password}
                         onChange={handleChange}
                     />
-                    {errorList.find(err => err.context.label === 'password') &&
+                    {errorList.find(err => err.context.label === 'password')?.message && (
                         <p className="error">{errorList.find(err => err.context.label === 'password').message}</p>
-                    }
+                    )}
 
                     <label htmlFor="role">Your Role</label>
-                    <input
-                        type="text"
+                    <select
                         id="role"
-                        placeholder='Client or Admin'
                         value={user.role}
                         onChange={handleChange}
-                    />
-                    {errorList.find(err => err.context.label === 'role') &&
+                    >
+                        <option value="">Select Role</option>
+                        <option value="client">Client</option>
+                        <option value="admin">Admin</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
+                    {errorList.find(err => err.context.label === 'role')?.message && (
                         <p className="error">{errorList.find(err => err.context.label === 'role').message}</p>
-                    }
+                    )}
                     
-                    <button type="submit">Register</button>
+                    <button type="submit" disabled={loading}>
+                        {loading ? 'Registering...' : 'Register'}
+                    </button>
                 </form>
             </div>
         </div>
-    )
+    );
 }

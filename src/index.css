@@ -1,4 +1,4 @@
- body {
+  body {
  background-color:  rgb(243 242 242 / 40%);
  }
  button{
@@ -30,7 +30,7 @@ header{
   -ms-border-radius: 0 0 100% 100% / 0 0 45% 45%;
   -o-border-radius: 0 0 100% 100% / 0 0 45% 45%;
   overflow: hidden;
-}
+} 
 header .text{
   padding: 0 50px;
   position: absolute;
@@ -174,7 +174,7 @@ header .text .info h1{
 .cloud .cards .cont{
   padding-top: 50px;
   display: grid;
-  grid-template-columns:  repeat(auto-fill,minmax(350px,1fr));
+  grid-template-columns:  repeat(auto-fill,minmax(300px,1fr));
   justify-content: space-between;
   gap: 50px;
 

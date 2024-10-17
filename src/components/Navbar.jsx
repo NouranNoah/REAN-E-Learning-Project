@@ -1,21 +1,15 @@
-
 import "./Navbar.css";
 import logo from "../assets/rean-high-resolution-logo-white-transparent.png"
 import { Link } from "react-router-dom";
 
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { useContext } from "react";
 import { useAuth } from "../webpages/Context/Usercontext";
-
-
 export default function Navbar() {
   const [isTablet, setIsTablet] = useState(false);
   const [isvisable, setIsvisble] = useState(true);
-  const { userName } = useAuth(); 
-  console.log(userName);
+  const {token} =useAuth();
 
-  
   const handleResize = () => {
     const tablet = window.innerWidth <= 1190;
       setIsTablet(tablet); // true tablet
@@ -104,9 +98,22 @@ export default function Navbar() {
                 <li><Link to="/careers" className="link">careers</Link></li>
                 <li><Link to="/blogs" className="link">blogs</Link></li>
                 <li><Link to="/about" className="link">about us</Link></li>
+                {token ? (
+                <>
+                {/* {user.role === 'Instructor' && (
+                  <li><Link to="/instructor" className="link">Profile</Link></li>
+                )}
+                {user.role === 'Admin' && (
+                  <li><Link to="/admin" className="link">Admin Panel</Link></li>
+                )}
+                {user.role === 'Client' && (
+                  <li><Link to="/client" className="link">Client Dashboard</Link></li>
+                )} */}
+                <li><Link to="/instructor" className="link">Profile</Link></li>
+                </>):''}
               </ul>
             </div>
-            
+            {!token ?
             <div className="buttons" >
               <button>
                 <Link to="/login" className="link">login</Link>
@@ -115,10 +122,10 @@ export default function Navbar() {
                 <Link to="/signup" className="link">sign up</Link>
               </button>
             </div>
+            :''}
           </div>
         )}
       </div>
     </nav>
   );
 }
-
