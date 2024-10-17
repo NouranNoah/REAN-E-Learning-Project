@@ -6,6 +6,7 @@ import { useAuth } from '../../Context/Usercontext';
 import Joi from 'joi';
 
 export default function Signup() {
+    const [activeButton, setActiveButton] = useState("register");
     const navigate = useNavigate();
     const { sendSignToApi, errorMessages } = useAuth();
     const [errorList, setErrorList] = useState([]);
@@ -33,9 +34,11 @@ export default function Signup() {
         return scheme.validate(user, { abortEarly: false });
     };
 
-    const turnLogin = () => {
-        navigate('/login');
+    const turnLogin = (buttonName) => {
+        setActiveButton(buttonName); // تغيير الزر النشط
+        navigate('/Auth/login');
     };
+ 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -68,10 +71,29 @@ export default function Signup() {
             </div>
             <div className="boxForm">
                 <h5>Welcome to REAN...!</h5>
-                <div className="turnButton">
+                {/* <div className="turnButton">
                     <button onClick={turnLogin}>Login</button>
                     <button className="active">Register</button>
-                </div>
+                </div> */}
+<div className="turnButton">
+      <button
+        className={activeButton === "login" ? "active" : ""}
+        onClick={() => turnLogin("login")}
+      >
+        Login
+      </button>
+      <button
+        className={activeButton === "register" ? "active" : ""}
+        onClick={() => turnLogin("register")}
+      >
+        Register
+      </button>
+    </div>
+  
+
+
+
+
                 <p className="title-boxForm">Create a new account to enjoy all our features!</p>
 
                 {errorMessages && errorMessages.general && (
@@ -122,6 +144,7 @@ export default function Signup() {
                         id="role"
                         value={user.role}
                         onChange={handleChange}
+                        style={{backgroundColor: "#eee"}}
                     >
                         <option value="">Select Role</option>
                         <option value="client">Client</option>

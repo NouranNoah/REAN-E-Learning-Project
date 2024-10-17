@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import loginImg from "../../../assets/loginphoto2.jpg"; 
 import './Login.css';
 import { useNavigate } from "react-router-dom";
@@ -34,19 +34,7 @@ export default function Login() {
     
         try {
             const { user } = await loginToApi(email, password);
-            // switch (user.role) {
-            //     case 'Instructor':
-            //         navigate('/instructor');
-            //         break;
-            //     case 'Admin':
-            //         navigate('/admin');
-            //         break;
-            //     case 'Client':
-            //         navigate('/client');
-            //         break;
-            //     default:
-            //         setLocalError("Role not recognized.");
-            // }
+    
             navigate('/instructor')
         } catch (error) {
             setLocalError("Login failed. Please check your credentials.");
@@ -55,11 +43,11 @@ export default function Login() {
     
 
     const turnLogin = () => {
-        navigate('/Signup');
+        navigate('/Auth/Signup');
     };
 
     return (
-        <div className="login">
+        <div className="login signup">
             <div className="boxImg" style={{ backgroundImage: `url(${loginImg})` }}>
                 <h3>Welcome Back!</h3>
                 <p>Login to Continue</p>

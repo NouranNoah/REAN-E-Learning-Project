@@ -22,8 +22,8 @@ export default function WhatisRean() {
                     <div className="box1">
                         <div className="text">
                         <h2>FOR INSTRUCTORS</h2>
-                            <button>
-                                <Link to="/login" className="link" >
+                            <button className="whatbutton">
+                                <Link to="/Auth/signup" className="link" >
                                 start free
                                 </Link>
                                
@@ -36,7 +36,7 @@ export default function WhatisRean() {
                         <div className="text">
                         <h2>FOR STUDENTS</h2>
                             <button>
-                                <Link className="link" to="/signup"  >
+                                <Link className="link" to="/Auth/signup"  >
                                 join now
                                 </Link>
                          

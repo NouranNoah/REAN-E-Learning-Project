@@ -54,59 +54,61 @@ ul li{
         width: 1170px;
     }
 }
-nav{
+.navbar{
+    position:static !important;
     padding: 13px 0;
     color: black;
 
 }
-nav .cont {
+.navbar .cont {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+justify-content: space-between;
 }
-@media(max-width:767px){
-    nav .cont {
+ @media(max-width:767px){
+    .navbar .cont {
         padding:  0 20px;
     }
-}
-nav .cont .all{
-    display: flex;
-    justify-content: space-between;
+} 
+.navbar .cont .all{
+    display: flex; 
+    max-width: 100% ;
+ 
     align-items: center;
     gap: 20px;
-}
-nav .cont .logo{
+} 
+.navbar .cont .logo{
     font-size: 28px;
     font-weight: bold;
     color: #ffff;
     color: black;
-}
-nav .cont .links ul {
+} 
+.navbar .cont .links ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: capitalize;
     gap: 30px;
-    /* color: #ffff; */
+   
     color: black;
     font-size: 22px;
     cursor: pointer;
-}
-nav .cont .links li{
+} 
+.navbar .cont .links li{
     transition: 0.3s;
-}
-nav .cont .links li:hover{
+} 
+.navbar .cont .links li:hover{
     transform: scale(1.1);
-}
-nav .cont .buttons{
+} 
+.navbar .cont .buttons{
     display: flex;
     justify-content: space-between;
     gap: 30px;
-}
-button {
+} 
+ .navbar button {
 
     background-color:rgba(126, 204, 205, 1) ;
-    padding: 10px 30px;
+    padding: 7px 30px;
     border: none;
     outline: none;
     box-shadow: none;
@@ -114,22 +116,27 @@ button {
     text-transform: capitalize;
     text-align: center;
     font-size: 22px;
-}
+} 
 
  button:hover .link{
+    transform: scale(1.1);
     color: rgba(91, 91, 91, 1);
-    background-color: #ffff;  
- 
-}
+    background-color: #ffff;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+} 
 
-.link{
+ .link{
     transition: 0.3s;
     text-decoration: none;
     color: #ffff;
-    color: black;
-}
-@media(max-width:767px){
-    .link{
+ 
+} 
+
+ @media(max-width:767px){
+    .navbar   .link{
         color: white;
     }
-}
+} 

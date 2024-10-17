@@ -1,8 +1,6 @@
 
 * {
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -12,71 +10,79 @@ body {
     background-color: #f5f5f5;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-ul {
-    list-style: none;
-}
-
-.cont {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media (min-width: 768px) {
-    .cont {
-        width: 750px;
-    }
-}
-
-@media (min-width: 992px) {
-    .cont {
-        width: 950px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .cont {
-        width: 1170px;
-    }
-}
-.sidebar   {
-    width: 40%;
+.sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding-top: 50px;
     padding-bottom: 50px;
     max-width: 230px;
-    height: 100vh;
-    height: 100vh;
-    background-color:white;
+    width: 35%;
+    background-color: white;
     color: black;
     text-transform: capitalize;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+   
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
-.sidebar .info{
+
+
+.sidebar .info {
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
 }
-.sidebar a{
+
+
+.sidebar a {
     text-decoration: none;
     color: black;
 }
-.toggle-btn{
-    display: none;
-}
-@media(max-width:800px){
-    .toggle-btn{
-        display: block;
+
+
+@media (min-width: 1120px) {
+    .sidebar {
+   
+        display: flex; 
+        width: 35%;  
+    }
+    .toggle-btn {
+        display: none; 
     }
 }
+
+
+@media (max-width: 1120px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        width: 0; 
+        overflow: hidden;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        width: 70%; 
+    }
+
+    .toggle-btn {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 20px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1001; 
+    }
+}
+

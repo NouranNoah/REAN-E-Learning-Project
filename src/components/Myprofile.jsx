@@ -92,7 +92,7 @@ export default function Myprofile() {
     return (
         <>
                 
-                <div className="all">
+                <div className="al">
             
             <div className="usercircle">
             <>

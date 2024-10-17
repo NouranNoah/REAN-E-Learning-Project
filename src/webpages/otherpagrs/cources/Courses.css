@@ -256,8 +256,68 @@ gap: 30px;
     
    text-align: center;
 }
+.list  .all{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    
+   text-align: center;
+}
 
+.coursesnav .navbar .link{
+    color: black;
+}
 
+/* @media(max-width:1207px){
+ 
+     .cont .details-grid {
+        display: flex;
+   flex-direction: column !important;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .details-cource .cont{
+        display: block;
+    }
+    .details-cource{
+        height: 150vh;
+    }
+    .tobuy {
+      
+ position: static;
+ right: 0;
+ top: 0;
+ transform: translateY(0) ;
+ height: 600px;
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ order: 1;
+ gap: 30px;
+ z-index: 1000 !important;
+ -webkit-transform: translateY(0) ;
+ -moz-transform: translateY(0) ;
+ -ms-transform: translateY(0) ;
+ -o-transform: translateY(0) ;
+}
+.list{
+    width: 400px;
+    order: 2;
+}
+.cont{
+    height: 300px;
+}
+  .details-cource{
+     background-color: #f5f5f5;
+  } 
+  
+} */
+@media(max-width:767px){
+    .coursesnav .navbar .link{
+        color: white;
+    }
+}
 
 
 

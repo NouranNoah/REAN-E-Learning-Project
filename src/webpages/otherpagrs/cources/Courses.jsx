@@ -183,8 +183,10 @@ export default function Courses() {
     ));
 
     return (
-        <>
-            <Navbar />
+        <><div className="coursesnav">
+   <Navbar />
+        </div>
+         
             <Search allCourses={allCourses} handleSearch={handleSearch} handleprice={handlePrice} />
             <div className="courses">
                 <div className="cont">

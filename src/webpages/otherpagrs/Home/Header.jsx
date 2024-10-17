@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import headerimg from "../../../assets/Screenshot_2024-10-02_012206-removebg.png"
 export default function Header() {
     return (
@@ -10,7 +12,7 @@ export default function Header() {
                         </br>teach you in more an interactive way</p>
                     </div>
                     <button>
-                        join free
+                        <Link to="/Auth/signup" className="link" >join free</Link>
                     </button>
                 </div>
                 <div className="img">
