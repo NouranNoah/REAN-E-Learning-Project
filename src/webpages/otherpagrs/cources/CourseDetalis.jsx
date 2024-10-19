@@ -169,6 +169,7 @@ import Navbar from "../../../components/Navbar";
 import Cookies from "universal-cookie";
 import { FcCheckmark } from "react-icons/fc";
 import Footer from "../../../components/Footer";
+import { date } from "joi";
 export default function CourceDetalis() {
     const cookie = new Cookies();
     const gettoken = cookie.get("Bearer");
@@ -201,6 +202,7 @@ export default function CourceDetalis() {
             try {
                 const res = await axios.get(`http://localhost:5000/api/courses/${id}`); 
                 setShowData([res.data]);
+                
             } catch (error) {
                 console.log(error);
             }
@@ -271,7 +273,7 @@ export default function CourceDetalis() {
   
     ));
   
- 
+ console.log(showData)
 
 
     return (

@@ -1,17 +1,18 @@
 import "./Navbar.css";
-import logo from "../assets/rean-high-resolution-logo-white-transparent.png"
+import imglogo from "../assets/logo.png"
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
+import Logout from "../webpages/Auth/Logout";
 export default function Navbar() {
   const [isTablet, setIsTablet] = useState(false);
   const [isvisable, setIsvisble] = useState(true);
   const [name,setname]=useState("")
   const cookie = new Cookies();
   const gettoken = cookie.get("Bearer"); 
-
+ console.log(gettoken)
 
 
   useEffect(() => {
@@ -97,9 +98,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="cont">
-        <div className="logo">
-          <img style={{maxWidth:"35px"}} src={logo} alt="img" />
-        </div>
+      <div className="logo">
+                    <img src={imglogo} alt="img" style={{maxWidth:"200px" ,maxHeight:"100px"}} />
+                </div>
         {isTablet && (
       <FaBars
       onClick={toggleMenu}
@@ -116,20 +117,15 @@ export default function Navbar() {
             <div className="links"   >
                           <ul style={isvisable && isTablet ? linkStyle : linkStylere } >
                 <li><Link to="/" className="link">home</Link></li>
-                <li><Link to="/courses" className="link">courses</Link></li>
-              
-                <li><Link to="/about" className="link">about us</Link></li>
-          
+                <li><Link to="/courses" className="link">courses</Link></li>          
               </ul>
             </div>
-            {gettoken && gettoken.length > 0 ? (
+            { gettoken ? (
          <div className="buttons">     
-  <button className="link">
-    log out
-                </button>
+ <Logout/>
                 <button className="profile" style={{width:"50px" ,height:"50px",borderRadius:"50%",textAlign:'center'}}>
                  
-                  <Link to="Profileclient" style={{display:"flex" ,justifyContent:"center",alignItems:"center",textDecoration:"none" ,color:"#777"}}>
+                  <Link to="/Profileclient" style={{display:"flex" ,justifyContent:"center",alignItems:"center",textDecoration:"none" ,color:"#777"}}>
                     <span>{ name.slice(0,2)}</span>
                   </Link>
                 </button>

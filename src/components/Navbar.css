@@ -118,7 +118,7 @@ justify-content: space-between;
     font-size: 22px;
 } 
 
- button:hover .link{
+ button:hover {
     transform: scale(1.1);
     color: rgba(91, 91, 91, 1);
     background-color: #ffff;

@@ -49,7 +49,7 @@ export default function Signup() {
             setLoading(true);
             try {
                 await sendSignToApi(user);
-                navigate('/login');
+                navigate('/Auth/login');
             } catch (error) {
                 console.log(error);
             } finally {

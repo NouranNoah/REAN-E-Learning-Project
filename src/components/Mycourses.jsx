@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from "react";
-import Homeprofile from "./Homeprofile"; 
+
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
+import "./Mycourses.css"
 
 export default function MyCourses() {
     const [allCourses, setAllCourses] = useState([]); 
@@ -48,7 +49,7 @@ export default function MyCourses() {
                 <h2>{course.title}</h2>
                 <p>{course.description}</p>
                 <div className="spans-links" style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Link to={`/details/${course._id}`}>
+                    <Link to={`/Profileclient/${course._id}`}>
                         <span>Show now</span>
                     </Link>
                 </div>
@@ -58,10 +59,20 @@ export default function MyCourses() {
 
     return (
         <div>
-            <Homeprofile/>
+               <div className="hom-landing">
+            <div className="text">
+                <h3>Sharpen Your Skills With Professional Online Courses</h3>
+                <button className="explore-now">
+                    <Link  to="/courses" className ="link">
+                    explore-now
+                    </Link>  
+                </button>
+                
+              </div>
+             </div>   
                   <div className="courses">
                 <div className="cont">
-                   { show ? cards : <p> no courses found yet</p>}
+                   { show ? cards : <p style={{color:"black"}}> no courses found yet</p>}
                 </div>
             </div>
             

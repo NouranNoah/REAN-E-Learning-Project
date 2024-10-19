@@ -35,15 +35,16 @@ export default function Login() {
         try {
             const { user } = await loginToApi(email, password);
     
-            navigate('/instructor')
+            navigate('/courses')
         } catch (error) {
+            console.log(error)
             setLocalError("Login failed. Please check your credentials.");
         }
     };
     
 
     const turnLogin = () => {
-        navigate('/Auth/Signup');
+        navigate('/Auth/signup');
     };
 
     return (

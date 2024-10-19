@@ -23,8 +23,9 @@ export const UserProvider = ({ children }) => {
         try {
             const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
             const token = res.data.token;
-            
-            cookie.set("Bearer",token)
+            const userId =res.data._id
+            cookie.set("Bearer", token)
+            cookie.set("userId", userId);
             return res.data;
         } catch (error) {
             handleError(error);
