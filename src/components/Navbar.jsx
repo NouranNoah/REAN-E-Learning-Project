@@ -96,7 +96,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" >
       <div className="cont">
       <div className="logo">
                     <img src={imglogo} alt="img" style={{maxWidth:"200px" ,maxHeight:"100px"}} />
@@ -116,7 +116,7 @@ export default function Navbar() {
           <div className="all"  style={isvisable && isTablet ? allstyle : allstylere}  >
             <div className="links"   >
                           <ul style={isvisable && isTablet ? linkStyle : linkStylere } >
-                <li><Link to="/" className="link">home</Link></li>
+                <li><Link  to="/" className="link">home</Link></li>
                 <li><Link to="/courses" className="link">courses</Link></li>          
               </ul>
             </div>

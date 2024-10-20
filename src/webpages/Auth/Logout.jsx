@@ -17,8 +17,6 @@ export default function Logout() {
         try {
             let res = await axios.post(`http://localhost:5000/api/auth/logout`, {}, { headers });
             console.log(res);
-
-     
             cookie.remove("Bearer");
             setIsLoggedOut(true); 
         } catch (error) {

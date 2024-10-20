@@ -58,8 +58,6 @@ export default function Myprofile() {
 
     async function handlesubmit(e) {
         e.preventDefault();
-
-        
         const updatedData = {};
         if (form.username !== originalData.username) updatedData.username = form.username;
         if (form.email !== originalData.email) updatedData.email = form.email;
