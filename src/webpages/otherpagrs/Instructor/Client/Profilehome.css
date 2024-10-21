@@ -1,12 +1,16 @@
+ .flexb{
+    display: flex;
+    flex-direction: column;
+  width: 80%;
+ }
+
 .home-landing{
     padding-bottom: 50px;
-  
     margin-top: 50px;
-    margin-right: 20px;
-    height: 350px;
-    background-image: url("../assets//searchheader.png");
+    height: 300px;
+    background-image: url("../../../../assets//homeimg.jpg");
     background-size: cover;
-    width: 80%;
+    max-width: 100%;
     border-radius:20px ;
     -webkit-border-radius:20px ;
     -moz-border-radius:20px ;
@@ -16,7 +20,7 @@
 }
 .home-landing .text{
     position: absolute;
-    left: 35%;
+    left: 40%;
     top: 50%;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
@@ -26,11 +30,46 @@
 }
 .home-landing .text h3{
     color: white;
-    font-size: 27px;
+    font-size: 40px;
     font-weight: bold;
     padding-bottom: 20px;
 
+
+
 }
+@media(max-width:767px){
+    .home-landing .text h3{
+        color: white;
+        font-size: 26px;
+     
+    
+    }
+    .home-landing{
+        margin-top: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+}
+ @media(max-width:1120px){
+    .flexb{
+        flex-direction: column;
+        justify-content: center;
+ 
+        width: 100%;
+    }
+    .home-landing{
+        margin-top: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+
+ }
 .add{
     transition: text-decoration 0.6s ease, color 0.6s ease;
     cursor: pointer;
@@ -181,4 +220,57 @@ i{
 }
 .courseIcons i:hover{
     color: rgba(60, 160, 162, 1); 
+}
+
+.watched {
+    padding-top: 50px;
+}
+.watched h3{
+    padding-left: 30px;
+    max-width: 100%;
+}
+.watched .cont{
+    max-width: 100%;
+padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+    gap: 20px;
+ 
+}
+@media(max-width:767px){
+    .watched .cont{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+
+    }
+    .watched h3{
+        text-align: center;
+    }
+    .watched{
+        padding-bottom: 50px;
+    }
+}
+
+.watched .cards{
+    width: 300px;
+    background-color: white;
+}
+
+.watched .cont .cards .img{
+    height: 200px !important;
+}
+
+.watched  .cont .cards .text{
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    justify-content: space-between;
+}
+
+.watched  .cont .cards .text .spans-links a{
+    text-decoration: none;
+    color: #007b7f;
 }

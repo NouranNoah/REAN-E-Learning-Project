@@ -4,32 +4,33 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
-import axios from "axios";
+// import axios from "axios";
 import Logout from "../webpages/Auth/Logout";
+import { FaUserCircle } from "react-icons/fa";
 export default function Navbar() {
   const [isTablet, setIsTablet] = useState(false);
   const [isvisable, setIsvisble] = useState(true);
-  const [name,setname]=useState("")
+  // const [name,setname]=useState("")
   const cookie = new Cookies();
   const gettoken = cookie.get("Bearer"); 
  console.log(gettoken)
 
 
-  useEffect(() => {
-    const headers = {
-        Authorization: `Bearer ${gettoken}`
-    };
+//   useEffect(() => {
+//     const headers = {
+//         Authorization: `Bearer ${gettoken}`
+//     };
 
-    axios.get("http://localhost:5000/api/auth/profile", { headers })
-        .then(response => {
-           setname(response.data.username)
+//     axios.get("http://localhost:5000/api/auth/profile", { headers })
+//         .then(response => {
+//            setname(response.data.username)
           
    
-        })
-        .catch(error => {
-            console.error('Error fetching profile', error);
-        });
-}, [gettoken]);
+//         })
+//         .catch(error => {
+//             console.error('Error fetching profile', error);
+//         });
+// }, [gettoken]);
 
   const handleResize = () => {
     const tablet = window.innerWidth <= 1190;
@@ -71,16 +72,16 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignitems: "center",
-        gap: "20px",
+      gap: "20px",
+        color:"black"
     }
 
   const linkStyle = {
-    color: "white",
     display: 'flex',
     flexDirection: 'column',
-    
     padding: '10px',
     zIndex: 1000,
+    color: "white",
   
     };
     const linkStylere ={
@@ -89,9 +90,10 @@ export default function Navbar() {
         alignItems: "center",
         textTransform: "capitalize",
         gap: "30px",
-        color: "#ffff",
+        
         fontSize: "22px",
-        cursor: "pointer",
+      cursor: "pointer",
+      color: "black",
   }
 
 
@@ -99,7 +101,8 @@ export default function Navbar() {
     <nav className="navbar" >
       <div className="cont">
       <div className="logo">
-                    <img src={imglogo} alt="img" style={{maxWidth:"200px" ,maxHeight:"100px"}} />
+          <img src={imglogo} alt="img" style={{ maxWidth: "200px", maxHeight: "100px" }} />
+          
                 </div>
         {isTablet && (
       <FaBars
@@ -116,17 +119,17 @@ export default function Navbar() {
           <div className="all"  style={isvisable && isTablet ? allstyle : allstylere}  >
             <div className="links"   >
                           <ul style={isvisable && isTablet ? linkStyle : linkStylere } >
-                <li><Link  to="/" className="link">home</Link></li>
-                <li><Link to="/courses" className="link">courses</Link></li>          
+                <li><Link  to="/" className="link" style={{ color :isvisable && isTablet ? "white " :"black"} }>home</Link></li>
+                <li><Link to="/courses" className="link" style={{ color :isvisable && isTablet ? "white " :"black"} }>courses</Link></li>          
               </ul>
             </div>
-            { gettoken ? (
-         <div className="buttons">     
- <Logout/>
-                <button className="profile" style={{width:"50px" ,height:"50px",borderRadius:"50%",textAlign:'center'}}>
+            {gettoken ? (
+              <div className="buttons" >
+                <Logout  isVisible={isvisable} isTablet={isTablet} />
+                <button className="profile" >
                  
-                  <Link to="/Profileclient" style={{display:"flex" ,justifyContent:"center",alignItems:"center",textDecoration:"none" ,color:"#777"}}>
-                    <span>{ name.slice(0,2)}</span>
+                  <Link to="/Profileclient" >
+                  <FaUserCircle style={{display:"flex" ,justifyContent:"center",alignItems:"center", fontSize:"35px", color :isvisable && isTablet ? "white " :"black"}} />
                   </Link>
                 </button>
                 </div>

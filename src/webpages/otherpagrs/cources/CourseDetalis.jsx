@@ -70,12 +70,9 @@ export default function CourceDetalis() {
 
     const show = showData.map((e, index) => (
         <>
-                  <div className="landing" key={index}>
-            <h1>{e.title} Course for web developer</h1>
-            <p>{e.description}</p>
-            </div>
            
-            <div className="tobuy" style={{zIndex:"1000000000"}}>
+           
+            <div className="tobuy" key={index} >
                 <div
                     className="img"
                     style={{
@@ -98,20 +95,34 @@ export default function CourceDetalis() {
         </>
   
     ));
+    const landing = showData.map((e, index) => {
+        return (
+            <div className="landing" key={index}>
+
+        <h1>{e.title} Course for web developer</h1>
+        <p>{e.description}</p>
+        </div>
+        )
+        
+    })
   
  console.log(showData)
 
 
     return (
         <>
+          
+
+          
       <div className="coursesnav">
   <Navbar />
   </div>
          
-            <div className="details-cource" >
-                <div className="cont">
-                    {show}
-                </div>
+                <div className="details-cource" >
+                    <div className="text">
+                        {landing}
+
+                    </div>
                 <div className="cont" >
                 <div className="list">
                     <h2> what you will learn !</h2>
@@ -120,6 +131,8 @@ export default function CourceDetalis() {
                     </div>
                   
                 </div>
+                    {show}
+           
                 </div>
                 <div style={{marginTop:"80px"}}>
                 <Footer />
@@ -127,8 +140,8 @@ export default function CourceDetalis() {
            
                 
               
-            
-            </div>
+                </div>
+         
         </>
     );
 }

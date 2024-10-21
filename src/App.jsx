@@ -9,12 +9,11 @@ import { UserProvider } from './webpages/Context/Usercontext';
 import CourseDetalis from './webpages/otherpagrs/cources/CourseDetalis';
 import Footer from './components/Footer';
 import Profileclient from "./webpages/otherpagrs/Instructor/Client/profileclient";
-import Myprofile from './components/Myprofile';
+import Myprofile from './webpages/otherpagrs/Instructor/Client/Myprofile';
 import { Navigate } from 'react-router-dom';
-import Homeprofile from "./components/Homeprofile";
-import Mycourses from './components/Mycourses';
+import Homeprofile from "./webpages/otherpagrs/Instructor/Client/Homeprofile";
+import Mycourses from './webpages/otherpagrs/Instructor/Client/Mycourses';
 import Watchcourse from './webpages/otherpagrs/cources/Watchcourse';
-
 import PaymentPage from './webpages/paymentstrip/Payment'; 
 import RequierAuth from './webpages/Auth/RequierAuth';
 

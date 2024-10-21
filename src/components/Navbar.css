@@ -63,6 +63,7 @@ ul li{
     display: flex;
 
 justify-content: space-between;
+align-items: center;
 }
  @media(max-width:767px){
     .navbar .cont {
@@ -105,28 +106,41 @@ justify-content: space-between;
     gap: 30px;
 } 
  .navbar button {
-
-    background-color:rgba(126, 204, 205, 1) ;
+    /*background-color:rgba(126, 204, 205, 1) ;
+    */background-color: transparent  !important;
     padding: 7px 30px;
     border: none;
     outline: none;
     box-shadow: none;
-    border-radius: 20px;
+    border-radius: 0 !important;
+    border: 1px solid rgba(126, 204, 205, 1)  !important;
     text-transform: capitalize;
     text-align: center;
     font-size: 22px;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
 } 
 
  button:hover {
     transform: scale(1.1);
     color: rgba(91, 91, 91, 1);
-    background-color: #ffff;
+   background-color: rgba(126, 204, 205, 1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
 } 
-
+button.profile{
+    color: black;
+    border: none !important;
+    padding: 0;
+}
+button.profile link{
+    color: black;
+    background-color: black;
+}
  .link{
     transition: 0.3s;
     text-decoration: none;

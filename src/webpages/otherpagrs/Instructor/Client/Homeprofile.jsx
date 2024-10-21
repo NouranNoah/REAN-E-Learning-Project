@@ -3,6 +3,7 @@ import "./Profilehome.css";
 import { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
+import CourseHistory from "./CourseHistory";
 
 export default function Homeprofile() {
     const [addView, setAddView] = useState(false);
@@ -22,6 +23,7 @@ export default function Homeprofile() {
         video: null,
         learned: ''
     });
+    const [name,setname]=useState("")
     const[role,setrole]=useState("")
     useEffect(() => {
         const headers = {
@@ -32,6 +34,7 @@ export default function Homeprofile() {
             .then(response => {
                 const data = response.data;
                 setrole(response.data.role);
+                setname(response.data.username)
             
        
             })
@@ -129,14 +132,19 @@ export default function Homeprofile() {
     };
 
     return (
-        <div className="home-landing">
+        <>
+            <div className="flexb">
+            <div className="home-landing">
             <div className="text">
-                <h3>Sharpen Your Skills With Professional Online Courses</h3>
+                <h3>We’re glad you’re back, { name} ! Let’s make today productive</h3>
                 <button className="explore-now">
-                    <Link to="/courses" className="link">Explore Now</Link>
+                    <Link to="/courses" className="link">Explore Now Courses</Link>
                 </button>
             </div>
-            {role ==="instructor" &&
+       
+           
+                </div>
+                {role ==="instructor" &&
              <div className='content'>
              {activeTab === 'courses' && !addView && (
                  <div className="courseBox">
@@ -259,7 +267,11 @@ export default function Homeprofile() {
          </div>
             
             }
-           
-        </div>
+            <CourseHistory/>
+            </div>
+        
+       
+        </>
+
     );
 }

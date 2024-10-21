@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom"; 
+import PropTypes from "prop-types";
 
-export default function Logout() {
+export default function Logout(props) {
+    let isVisible = props.isVisible;
+    let isTablet = props.isTablet;
     const cookie = new Cookies();
     const navigate = useNavigate(); 
     const [isLoggedOut, setIsLoggedOut] = useState(false); 
@@ -33,9 +36,17 @@ export default function Logout() {
 
     return (
       
-            <button className=".link" onClick={handlelogout}>
+        <button   onClick={handlelogout} style={{ color: (isVisible && isTablet) ? "white" :"black" }}
+>
                 Log out
             </button>
        
     );
+  
+    
+   
+}
+Logout.propTypes = {
+    isVisible: PropTypes.bool.isRequired,
+    isTablet: PropTypes.bool.isRequired
 }
