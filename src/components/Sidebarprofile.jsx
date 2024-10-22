@@ -34,19 +34,19 @@ export default function Sidebarprofile() {
                 <div className="info">
                     <div className="home">
                         <Link to="/Profileclient/profilehome">
-                            <FaHome style={{ marginRight: "7px", color: "rgb(65 144 161)" }} />
+                            <FaHome style={{ marginRight: "7px", color: "rgb(218 63 201 / 68%)" }} />
                             my home
                         </Link>
                     </div>
                     <div className="account">
                         <Link to="/Profileclient/myaccount">
-                            <FaUser style={{ marginRight: "7px", color: "rgb(65 144 161)" }} />
+                            <FaUser style={{ marginRight: "7px", color: "rgb(218 63 201 / 68%)" }} />
                             my Account
                         </Link>
                     </div>
                     <div className="mycourses">
                         <Link to="/Profileclient/mycourses">
-                            <MdOutlineOndemandVideo style={{ marginRight: "7px", color: "rgb(65 144 161)" }} />
+                            <MdOutlineOndemandVideo style={{ marginRight: "7px", color: "rgb(218 63 201 / 68%)" }} />
                             my courses
                         </Link>
                     </div>

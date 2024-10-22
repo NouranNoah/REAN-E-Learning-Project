@@ -42,7 +42,7 @@ export default function Homeprofile() {
                 console.error('Error fetching profile', error);
             });
     }, [token]);
-    console.log(role)
+    
 
     useEffect(() => {
         if (userId) {
@@ -133,7 +133,15 @@ export default function Homeprofile() {
 
     return (
         <>
+        
             <div className="flexb">
+            <nav className="profile-nav">
+               
+                    <Link to="/">  home</Link>
+                    <Link to ="/courses"> courses</Link>
+
+
+            </nav>
             <div className="home-landing">
             <div className="text">
                 <h3>We’re glad you’re back, { name} ! Let’s make today productive</h3>

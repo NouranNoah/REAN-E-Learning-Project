@@ -35,7 +35,7 @@ export default function Signup() {
     };
 
     const turnLogin = (buttonName) => {
-        setActiveButton(buttonName); // تغيير الزر النشط
+        setActiveButton(buttonName); 
         navigate('/Auth/login');
     };
  
@@ -71,10 +71,7 @@ export default function Signup() {
             </div>
             <div className="boxForm">
                 <h5>Welcome to REAN...!</h5>
-                {/* <div className="turnButton">
-                    <button onClick={turnLogin}>Login</button>
-                    <button className="active">Register</button>
-                </div> */}
+           
 <div className="turnButton">
       <button
         className={activeButton === "login" ? "active" : ""}

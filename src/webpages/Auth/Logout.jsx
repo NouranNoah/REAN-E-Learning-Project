@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function Logout(props) {
-    let isVisible = props.isVisible;
-    let isTablet = props.isTablet;
+    // let isVisible = props.isVisible;
+    // let isTablet = props.isTablet;
     const cookie = new Cookies();
     const navigate = useNavigate(); 
     const [isLoggedOut, setIsLoggedOut] = useState(false); 
@@ -36,7 +36,7 @@ export default function Logout(props) {
 
     return (
       
-        <button   onClick={handlelogout} style={{ color: (isVisible && isTablet) ? "white" :"black" }}
+        <button   onClick={handlelogout} style={{ color: (props.isVisible && props.isTablet) ? "white" :"black" }}
 >
                 Log out
             </button>

@@ -4,34 +4,13 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
-// import axios from "axios";
 import Logout from "../webpages/Auth/Logout";
 import { FaUserCircle } from "react-icons/fa";
 export default function Navbar() {
   const [isTablet, setIsTablet] = useState(false);
   const [isvisable, setIsvisble] = useState(true);
-  // const [name,setname]=useState("")
   const cookie = new Cookies();
   const gettoken = cookie.get("Bearer"); 
- console.log(gettoken)
-
-
-//   useEffect(() => {
-//     const headers = {
-//         Authorization: `Bearer ${gettoken}`
-//     };
-
-//     axios.get("http://localhost:5000/api/auth/profile", { headers })
-//         .then(response => {
-//            setname(response.data.username)
-          
-   
-//         })
-//         .catch(error => {
-//             console.error('Error fetching profile', error);
-//         });
-// }, [gettoken]);
-
   const handleResize = () => {
     const tablet = window.innerWidth <= 1190;
       setIsTablet(tablet); // true tablet

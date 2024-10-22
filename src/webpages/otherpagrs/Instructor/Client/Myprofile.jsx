@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import "./Myprofile.css";
 import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function Myprofile() {
     const cookie = new Cookies();
     const gettoken = cookie.get("Bearer");
@@ -90,8 +91,15 @@ export default function Myprofile() {
         <>
      
   
-                
+ 
             <div className="al">
+            <nav className="profile-nav">
+               
+               <Link to="/">  home</Link>
+               <Link to ="/courses"> courses</Link>
+
+
+       </nav> 
     
                 <div className="width">
 

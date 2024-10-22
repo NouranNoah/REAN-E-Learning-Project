@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import "./Mycourses.css"
+import { FaBookOpenReader } from "react-icons/fa6";
 
 export default function MyCourses() {
     const [allCourses, setAllCourses] = useState([]); 
@@ -58,7 +59,14 @@ export default function MyCourses() {
     ));
 
     return (
-        <div>
+        <div className="allpage">
+            <nav className="profile-nav">
+               
+               <Link to="/">  home</Link>
+               <Link to ="/courses"> courses</Link>
+
+
+       </nav>
                <div className="hom-landing">
             <div className="text">
                 <h3>Sharpen Your Skills With Professional Online Courses</h3>
@@ -70,10 +78,13 @@ export default function MyCourses() {
                 
               </div>
              </div>   
-                  <div className="courses">
+            <div className="courses">
+                <h3 style={{margin:" 15px  0",paddingLeft:"40px" , textTransform:"capitalize"} }> my courses  <FaBookOpenReader /></h3>
                 <div className="cont">
-                   { show ? cards : <p style={{color:"black"}}> no courses found yet</p>}
+                { show ? cards : <p style={{color:"black"}}> no courses found yet</p>}
                 </div>
+                 
+              
             </div>
             
       </div>

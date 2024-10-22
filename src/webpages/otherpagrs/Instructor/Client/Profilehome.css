@@ -1,7 +1,18 @@
+@media (min-width: 1200px) {
+    .flexb .cont {
+        width: 1090px;
+    }
+}
  .flexb{
     display: flex;
     flex-direction: column;
-  width: 80%;
+ width: 80%;
+  scrollbar-width: none;
+ }
+ @media(min-width:1300px){
+    .flexb{
+        width: 100%;
+    }
  }
 
 .home-landing{
@@ -10,13 +21,14 @@
     height: 300px;
     background-image: url("../../../../assets//homeimg.jpg");
     background-size: cover;
-    max-width: 100%;
+
     border-radius:20px ;
     -webkit-border-radius:20px ;
     -moz-border-radius:20px ;
     -ms-border-radius:20px ;
     -o-border-radius:20px ;
     position: relative;
+  
 }
 .home-landing .text{
     position: absolute;
