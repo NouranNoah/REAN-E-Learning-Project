@@ -201,7 +201,7 @@ select option {
     
 }
 .details-cource  .cont .tobuy{
-    z-index: -1;
+    z-index: 1000;
     height: 600px;
     margin-top: -250px;
     margin-right: -10px;

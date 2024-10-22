@@ -35,7 +35,7 @@ export default function Sidebarprofile() {
                     <div className="home">
                         <Link to="/Profileclient/profilehome">
                             <FaHome style={{ marginRight: "7px", color: "rgb(218 63 201 / 68%)" }} />
-                            my home
+                            my Dashboard
                         </Link>
                     </div>
                     <div className="account">

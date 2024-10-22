@@ -7,8 +7,6 @@ import { FcCheckmark } from "react-icons/fc";
 import Footer from "../../../components/Footer";
 
 export default function CourceDetalis() {
-
-    
     const cookie = new Cookies(); 
     const gettoken = cookie.get("Bearer");
     const [courseExists, setCourseExists] = useState(false); 
@@ -55,9 +53,7 @@ export default function CourceDetalis() {
         }
      
     }
-    function esraa() {
-     console.log("esraa")
- }
+
     const learnedArray = showData.map(course => course.learned.split('\n'));
     const showlistlearned = learnedArray.flat().map((item, index) => (
         <ul key={index} style={{ padding: "10px 0" }} className="grid">
@@ -79,9 +75,9 @@ export default function CourceDetalis() {
                 <h2>Subscribe to Udemy’s top courses</h2>
                 <p>Get this course, plus 12,000+ of our top-rated courses, Learn more</p>
             </div>
-            <div className="price" onClick={esraa}>{e.price}$</div>
+            <div className="price" >{e.price}$</div>
             <div className="button" onClick={handleBuy} >
-                <button   className="button-issue">{courseExists ? "go to watch" : "buy now"}</button>
+                <button className="button-issue">{courseExists ? "go to watch" : "buy now"}</button>
             </div>
         </div>
     ));

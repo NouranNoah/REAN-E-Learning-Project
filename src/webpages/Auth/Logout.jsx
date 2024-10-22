@@ -5,13 +5,27 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function Logout(props) {
-    // let isVisible = props.isVisible;
-    // let isTablet = props.isTablet;
+    const [isTablet, setIsTablet] = useState(false);
     const cookie = new Cookies();
     const navigate = useNavigate(); 
     const [isLoggedOut, setIsLoggedOut] = useState(false); 
 
     const gettoken = cookie.get("Bearer");
+    const handleResize = () => {
+        const tablet = window.innerWidth <= 1190;
+          setIsTablet(tablet); // true tablet
+    
+   
+    };
+    useEffect(() => {
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);
+    
+    
 
     async function handlelogout() {
         const headers = {
@@ -36,7 +50,7 @@ export default function Logout(props) {
 
     return (
       
-        <button   onClick={handlelogout} style={{ color: (props.isVisible && props.isTablet) ? "white" :"black" }}
+        <button   onClick={handlelogout} style={{ color:  isTablet ? "white" :"black" }}
 >
                 Log out
             </button>
@@ -45,8 +59,4 @@ export default function Logout(props) {
   
     
    
-}
-Logout.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    isTablet: PropTypes.bool.isRequired
 }
