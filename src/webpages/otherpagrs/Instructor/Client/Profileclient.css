@@ -1,0 +1,12 @@
+.profileclient{
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+   
+   
+}
+@media(max-width:767px){
+    .profileclient{
+        justify-content: center;
+    }
+}

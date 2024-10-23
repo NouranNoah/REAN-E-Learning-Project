@@ -1,0 +1,162 @@
+.signup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4% 10%;
+    padding-bottom: 0;
+    height: 90vh;
+}
+
+.boxImg {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 0 5%;
+    color: white;
+}
+.boxImg h3{
+    margin-top: 85%;
+}
+
+.boxImg p{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.719);
+    padding: 10px 0;
+}
+
+.boxForm{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.boxForm h5{
+    color: rgba(0, 0, 0, 0.842);
+    padding: 3%;
+    padding-top: 0%;
+    text-align: center;
+}
+
+.boxForm .turnButton{
+    background-color: rgba(73, 187, 189, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 35px;
+    padding: 5px;
+    margin: 0 10%;
+}
+.turnButton .active{
+    background-color: rgb(129, 228, 230);
+}
+.turnButton button{
+    color: rgba(255, 255, 255, 0.89);
+    background-color: transparent;
+    font-size: 18px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+
+.boxForm .title-boxForm{
+    color: rgba(0, 0, 0, 0.63);
+    font-size: 17px;
+    padding: 3%;
+    margin-top: 5%;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    color: rgba(0, 0, 0, 0.842);
+    padding: 1% 0;
+}
+form input{
+    border-radius: 35px;
+    margin-bottom: 3%;
+    padding: 3%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+}
+form input:focus{
+    border:2px solid rgba(73, 187, 189, 1);
+}
+form button{
+    margin: 15%;
+    margin-top: 5%;
+    margin-bottom: 0;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(73, 187, 189, 1);
+    transition: background-color 0.3s ease;
+}
+form button:hover{
+    background-color: rgb(58, 151, 153);
+    color: white;
+}
+
+
+
+.error,.error-messages{
+    color:#e45959;
+    padding: 2%;
+    text-align: center;
+}
+select{
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1220px) {
+    .boxForm .turnButton {
+        margin: 0 ;
+    }
+    
+}
+
+
+@media (max-width: 930px) {
+    .turnButton button{
+        padding: 5px 15px;
+    }
+    .boxForm{
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 676px) {
+    .boxImg{
+        display: none;
+    }
+    .signup {
+        display: flex;
+        flex-direction: column;
+     
+        
+    }
+    .boxForm h5 {
+        padding: 10% 0;
+    }
+    .boxForm p {
+        padding: 10px 0;
+    }
+    form input{
+        margin-bottom: 10%;
+        padding: 5%;
+    }
+    .boxForm{
+        padding: 40px 40px;
+    }
+    .boxForm .turnButton {
+        margin: 0 15%;
+        padding: 2%;
+    }
+}

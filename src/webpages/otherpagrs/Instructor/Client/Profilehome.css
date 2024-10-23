@@ -1,0 +1,137 @@
+@media (min-width: 1200px) {
+    .flexb .cont {
+        width: 1090px;
+    }
+}
+ .flexb{
+    display: flex;
+    flex-direction: column;
+ width: 80%;
+  scrollbar-width: none;
+ }
+ @media(min-width:1300px){
+    .flexb{
+        width: 100%;
+    }
+ }
+
+.home-landing{
+    padding-bottom: 50px;
+    margin-top: 50px;
+    height: 300px;
+    background-image: url("../../../../assets//homeimg.jpg");
+    background-size: cover;
+
+    border-radius:20px ;
+    -webkit-border-radius:20px ;
+    -moz-border-radius:20px ;
+    -ms-border-radius:20px ;
+    -o-border-radius:20px ;
+    position: relative;
+  
+}
+.home-landing .text{
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.home-landing .text h3{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+
+
+}
+@media(max-width:767px){
+    .home-landing .text h3{
+        color: white;
+        font-size: 26px;
+     
+    
+    }
+    .home-landing{
+        margin-top: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+}
+ @media(max-width:1120px){
+    .flexb{
+        flex-direction: column;
+        justify-content: center;
+ 
+        width: 100%;
+    }
+    .home-landing{
+        margin-top: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+
+ }
+
+.watched {
+    padding-top: 50px;
+}
+.watched h3{
+    padding-left: 30px;
+    max-width: 100%;
+}
+.watched .cont{
+    max-width: 100%;
+padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+    gap: 20px;
+ 
+}
+@media(max-width:767px){
+    .watched .cont{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+
+    }
+    .watched h3{
+        text-align: center;
+    }
+    .watched{
+        padding-bottom: 50px;
+    }
+}
+
+.watched .cards{
+    width: 300px;
+    background-color: white;
+}
+
+.watched .cont .cards .img{
+    height: 200px !important;
+}
+
+.watched  .cont .cards .text{
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    justify-content: space-between;
+}
+
+.watched  .cont .cards .text .spans-links a{
+    text-decoration: none;
+    color: #007b7f;
+}
