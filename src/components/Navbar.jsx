@@ -1,5 +1,6 @@
 import "./Navbar.css";
-import imglogo from "../assets/logo.png"
+import logohome from "../assets/logo copy 2.png"
+import logoother from "../assets/logo copy1.png"
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -38,21 +39,21 @@ export default function Navbar() {
     backgroundColor: '#000000b8',
     padding: '10px',
     margin: "0",
-                    
+  
     position: 'absolute',
     top: '60px',
     left: '0',
     width: '100%',
     zIndex: 1000,
    
-                  
+
     }
     const allstylere = {
         display: "flex",
         justifyContent: "space-between",
         alignitems: "center",
-      gap: "20px",
-        color:"black"
+      gap: "70px",
+        color:"white"
     }
 
   const linkStyle = {
@@ -72,15 +73,15 @@ export default function Navbar() {
         
         fontSize: "22px",
       cursor: "pointer",
-      color: "black",
+      color: "white",
   }
 
 
   return (
-    <nav className="navbar" >
+    <nav className="navbar"  style={{backgroundColor:window.location.href=="http://localhost:5173/Contact" && "white"}}>
       <div className="cont">
       <div className="logo">
-          <img src={imglogo} alt="img" style={{ maxWidth: "200px", maxHeight: "100px" }} />
+          <img src={window.location.href=="http://localhost:5173/" ?logohome :logoother} alt="img" style={{ maxWidth: "200px", maxHeight: "100px" }} />
           
                 </div>
         {isTablet && (
@@ -96,29 +97,34 @@ export default function Navbar() {
         )}
         { isvisable && (
           <div className="all"  style={isvisable && isTablet ? allstyle : allstylere}  >
-            <div className="links"   >
+            <div className="links"   style={{color:"red"}}  >
                           <ul style={isvisable && isTablet ? linkStyle : linkStylere } >
-                <li><Link  to="/" className="link" style={{ color :isvisable && isTablet ? "white " :"black"} }>home</Link></li>
-                <li><Link to="/courses" className="link" style={{ color :isvisable && isTablet ? "white " :"black"} }>courses</Link></li>          
+                <li><Link  to="/" className="link" style={{ color: window.location.href!=='http://localhost:5173/' && "black"}}>home</Link></li>
+                <li><Link to="/courses" className="link" style={{ color: window.location.href!=='http://localhost:5173/' && "black"}} >courses</Link></li>
+          
+                <li><Link to="/Contact" className="link"style={{ color: window.location.href!=='http://localhost:5173/' && "black"}} >Contact Us</Link></li>     
               </ul>
             </div>
             {gettoken ? (
               <div className="buttons" >
-                <Logout  isVisible={isvisable} isTablet={isTablet} />
-                <button className="profile" >
-                 
-                  <Link to="/Profileclient" >
-                  <FaUserCircle style={{display:"flex" ,justifyContent:"center",alignItems:"center", fontSize:"35px", color :isvisable && isTablet ? "white " :"black"}} />
+                 <button className="profile" >
+                <Link to="/Profileclient"  >
+                  <FaUserCircle  className="FaUser"  style={{ color: window.location.href!=='http://localhost:5173/' && "black"}}/>
                   </Link>
+                 
                 </button>
+            
+                <Logout />
+               
                 </div>
             )
               
               : (
-  <div className="buttons">
+  <div className="buttons auth-button">
     <button>
       <Link to="/Auth/login" className="link">login</Link>
     </button>
+   
     <button>
       <Link to="/Auth/signup" className="link">sign up</Link>
     </button>

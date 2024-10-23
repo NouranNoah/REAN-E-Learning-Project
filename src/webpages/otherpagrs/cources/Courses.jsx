@@ -158,9 +158,9 @@ export default function Courses() {
                 <h2>{course.title}</h2>
                 <p>{course.description}</p>
                 <div className="spans-links" style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span>{course.price}$</span>
+                    <span className="price" >{course.price}$</span>
                     <Link to={`/details/${course._id}`}>
-                        <span>Learn more</span>
+                        <span className="learn">Learn more</span>
                     </Link>
                 </div>
             </div>

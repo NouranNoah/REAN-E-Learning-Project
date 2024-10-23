@@ -6,6 +6,7 @@ import Header from "./Header";
 import Sucsess from "./Sucsess";
 import WhatisRean from "./WhatisRean";
 
+
 export default function Home() {
     return (
         <>
@@ -17,7 +18,9 @@ export default function Home() {
             <Sucsess />
             <WhatisRean />
             <CloudSoftware />
+        
             <Footer/>
+            
      
 
     

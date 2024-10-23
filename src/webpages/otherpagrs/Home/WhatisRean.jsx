@@ -52,9 +52,9 @@ export default function WhatisRean() {
                 <div className="thingstodo">
                     <div className="text">
                         <h2>
-                            <span >Everything you can do in a physical classroom </span>, you can do with TOTC
+                            <span >Everything you can do in a physical classroom </span>, you can do with REAN
                         </h2>
-                        <p>TOTC’s school management software helps traditional and online schools manage scheduling,
+                        <p>REAN’s school management software helps traditional and online schools manage scheduling,
                             attendance, payments and virtual classrooms all in one secure cloud-based system.</p>
 
                     </div>

@@ -50,7 +50,7 @@ export default function Logout(props) {
 
     return (
       
-        <button   onClick={handlelogout} style={{ color:  isTablet ? "white" :"black" }}
+        <button   onClick={handlelogout} style={{ color:  isTablet ? "#616161" :"#616161",fontSize:'20px',border:'none' }}
 >
                 Log out
             </button>

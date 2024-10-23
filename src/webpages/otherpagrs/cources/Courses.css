@@ -2,6 +2,9 @@
 .courses {
     padding: 50px 0;
 }
+.courses .navbar .links{
+    color: black !important;
+}
 .courses .cont {
   
     display: grid;
@@ -10,6 +13,16 @@
     gap: 50px;
     align-items: center;
     
+}
+
+.courses .cont .cards{
+    padding: 30px;
+    background-color: white;
+    width: 380px !important;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
 }
 @media(max-width:767px){
     .courses .cont {
@@ -24,21 +37,23 @@
     height: 410px;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
 }
  .courses .cont .cards h2{
     color: rgba(37, 38, 65, 1);
-    font-size: 24px;
+    font-size: 25px;
     padding: 10px 0;
 }
 .courses .cont .cards p{
     color: #777;
-    padding: 15px 0;
-    max-height: 110px;
+   padding: 10px 0;
+    max-height: 120px;
     overflow: hidden;
 }
-.courses .cont .cards span{
+.courses .cont .cards .price{
     display: inline-block;
     padding: 15px 0;
+    font-size: 21px;
     color: rgba(73, 187, 189, 1);
     font-weight: bold;
 }
@@ -105,6 +120,7 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+
 @media(max-width:767px){
     .search .text form input {
         margin-bottom: 0;
@@ -443,3 +459,17 @@ gap: 30px;
 
 }
 
+
+.courses .cont .cards .learn{
+    background-color: rgba(73, 187, 189, 1);
+    padding: 10px ;
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+.spans-links{
+    align-items: center;
+}

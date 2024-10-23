@@ -8,11 +8,11 @@ export default function Header() {
                 <div className="text">
                     <div className="info">
                         <h1> <span>Studying</span> Online is now <br></br> much easier</h1>
-                        <p>TOTC is an interesting platform that will <br>
+                        <p>REAN LEARN is an interesting platform that will <br>
                         </br>teach you in more an interactive way</p>
                     </div>
-                    <button>
-                        <Link to="/Auth/signup" className="link" >join free</Link>
+                    <button className="join-btn">
+                        <Link to="/Auth/signup" className="join-btn" >join free</Link>
                     </button>
                 </div>
                 <div className="img">

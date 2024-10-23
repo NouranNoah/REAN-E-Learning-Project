@@ -1,10 +1,15 @@
-  body {
+ 
+ body {
  background-color:  rgb(243 242 242 / 40%);
+ 
  }
- button{
-  color: #ffff;
-  background-color:rgba(126, 204, 205, 1) ;
-  padding: 10px 20px;
+
+
+  button{
+  color:rgb(255, 255, 255);
+  background-color:rgba(73, 187, 189, 1) ;
+  border-radius: 8px;
+  padding: 15px 20px;
   border: none;
   outline: none;
   box-shadow: none;
@@ -12,9 +17,14 @@
   text-transform: capitalize;
   text-align: center;
   font-size: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
-button:hover .link{
+ button:hover .link{
   transform: scale(1.1);
 
  
@@ -22,9 +32,9 @@ button:hover .link{
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
-} 
+}  
 
-.link{
+ .link{
   transition: 0.3s;
   text-decoration: none;
   color: #ffff;
@@ -32,7 +42,19 @@ button:hover .link{
 }
 button:hover{
   background-color: #ffff;
-  color: rgba(91, 91, 91, 1);
+  color: white;
+} 
+
+.join-btn {
+  color:rgba(73, 187, 189, 1);
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+ }
+
+.join-btn:hover{ transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1);
 }
 header{
   background-color: rgba(73, 187, 189, 1);
@@ -51,7 +73,7 @@ header{
 header .text{
   padding: 0 50px;
   position: absolute;
-left: 5%;
+  left: 5%;
   top: 50%;
   transform: translateY(-50%);
 
@@ -60,7 +82,7 @@ header .text .info h1{
   max-width: 600px;
   font-size: 40px;
   color: white;
-  padding-bottom: 50px
+  padding-bottom: 20px
 }
 
 header .text .info h1 span{
@@ -70,7 +92,7 @@ header .text .info h1 span{
 header .text p{
   color: #ffff;
   font-size: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 header .img{
   position: absolute;

@@ -1,4 +1,5 @@
 import './index.css';
+import "../src/components/Navbar.css"
 import Home from './webpages/otherpagrs/Home/Home';
 import Courses from './webpages/otherpagrs/cources/Courses';
 import { Route, Routes } from 'react-router-dom';
@@ -13,15 +14,19 @@ import Mycourses from './webpages/otherpagrs/Instructor/Client/Mycourses';
 import Watchcourse from './webpages/otherpagrs/cources/Watchcourse';
 import PaymentPage from './webpages/paymentstrip/Payment'; 
 import RequierAuth from './webpages/Auth/RequierAuth';
+import Contact from "./webpages/otherpagrs/Home/Contact"
 
 export default function App() {
     return (
         <UserProvider>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path='/Contact' element={<Contact/> } />
                 <Route path='/Auth'>
                     <Route path="login" element={<Login />} />
                     <Route path="signup" element={<Signup />} />
+                   
+                    
                 </Route>
                 {/* {  protected routes} */}
                 <Route element={<RequierAuth />}>

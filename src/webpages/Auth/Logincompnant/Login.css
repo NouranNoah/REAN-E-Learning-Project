@@ -76,6 +76,7 @@ form button {
 
 form button:hover {
   background-color: rgb(58, 151, 153);
+  color: white;
 }
 
 .error, .error-messages {
@@ -97,6 +98,10 @@ form button:hover {
 
 .turnButton .active {
   background-color: rgb(129, 228, 230);
+  color: white;
+}
+.turnButton:hover{
+  color: white;
 }
 
 form{
