@@ -1,8 +1,10 @@
 
 
+
+
 @media (min-width: 1200px) {
     .allpage  .cont {
-        width: 1090px;
+        width: 1000px;
     }
 }
 .allpage{
@@ -117,4 +119,3 @@
 .allpage .courses{
     padding: 0;
 }
-

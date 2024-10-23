@@ -41,7 +41,7 @@ export default function MyCourses() {
                 className="img"
                 style={{
                     backgroundImage: `url(${course.image})`,
-                    width: "300px",
+                    width: "250px",
                     height: "300px",
                     backgroundSize: "cover"
                 }}

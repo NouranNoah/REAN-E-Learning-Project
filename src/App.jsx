@@ -15,6 +15,7 @@ import Watchcourse from './webpages/otherpagrs/cources/Watchcourse';
 import PaymentPage from './webpages/paymentstrip/Payment'; 
 import RequierAuth from './webpages/Auth/RequierAuth';
 import Contact from "./webpages/otherpagrs/Home/Contact"
+import Uplode from './webpages/otherpagrs/Instructor/Client/Upload';
 
 export default function App() {
     return (
@@ -37,7 +38,8 @@ export default function App() {
                   <Route index element={<Homeprofile />} />
                     <Route path='profilehome' element={<Homeprofile />} />
                     <Route path='myaccount' element={<Myprofile />} />
-                    <Route path='mycourses' element={<Mycourses />} />
+                        <Route path='mycourses' element={<Mycourses />} />
+                        <Route path='uploade' element={<Uplode />} />
                     <Route path=':id' element={<Watchcourse />} />
                 </Route>
                 </Route>
