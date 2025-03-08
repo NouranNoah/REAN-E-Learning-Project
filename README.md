@@ -1,8 +1,17 @@
-# React + Vite
+E-Learning Platform
+A React-based e-learning platform that allows users to browse, purchase, and enroll in courses easily. The platform enhances the learning experience by providing interactive content and a smooth user interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Features
+✅ Browse a variety of courses
+✅ Secure course purchase with Stripe payment integration
+✅ User authentication (login & signup)
+✅ Responsive and modern UI
+✅ Built with React.js + Vite for high performance
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔧 Tech Stack
+Frontend: React.js, Vite, CSS
+State Management: React Hooks & Context API
+Payment Integration: Stripe
+Deployment: Vercel
+🚀 Live Demo
+🔗 Check out the live version here: https://rean-e-learning-project.vercel.app/
